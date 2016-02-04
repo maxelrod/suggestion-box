@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 
+
+##############################################################################################
+# Directories
+
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_DIR = os.path.abspath(SETTINGS_DIR + "/../..")
+GIT_DIR = os.path.abspath(PROJECT_DIR + "/..")
+
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,8 +32,24 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'vn&ikem(ymu2*wyb(+m8i-q)&=^1^2z9u5m3sja5e1ua^fxta2'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+
+
+
+##############################################################################################
+# Static Files
+#
+# This site doesn't do anything fancy for media/static--they're just kept on
+# the filesystem. If we deployed at a PaaS place, we'd want to move to S3.
+
+# Where we want to store static files.
+STATIC_ROOT = GIT_DIR + "/static/"
+STATIC_URL = "/static/"
+
+# We keep our static source files in the "static" directory.
+STATICFILES_DIRS = [os.path.join(PROJECT_DIR, "static")]
+
+
 
 ALLOWED_HOSTS = []
 
@@ -31,13 +57,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'suggestion_submission'
+    'suggestion_submission',
+    'bootstrap3'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,3 +154,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
