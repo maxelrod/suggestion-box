@@ -18,10 +18,10 @@ h1 {
     border-color: #611504;
 }
 
-#id_description {
+#id_suggestion {
     background-color: #f9ffff;
 }
 
-#id_description:focus {
+#id_suggestion:focus {
     background-color: #ffffff;
 }
