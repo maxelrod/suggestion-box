@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Upgrade & restart deployed frodo
+# Upgrade & restart deployed suggestion-box
 
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 git pull
