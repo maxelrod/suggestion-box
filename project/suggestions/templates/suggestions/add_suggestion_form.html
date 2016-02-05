@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <h1>
+                The Ear of the Balloonicorn<br>
+                Suggestion Box
+            </h1>
+            <p>Your ideas can make Hackbright better! Share your thoughts with us.</p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <img class="balloonicorn-peek"
+                 src="{% static "images/peeking-balloonicorn.jpg" %}">
+        </div>
+    </div>
+
+    <form role="form" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        {% buttons submit="Submit Suggestion" %}{% endbuttons %}
+    </form>
+
+    <p>
+        <small>
+            Your suggestion is entirely anonymous. We do not track IP address or any other
+            identifying information here.
+        </small>
+    </p>
+{% endblock %}

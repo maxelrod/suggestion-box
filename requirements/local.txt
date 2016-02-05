@@ -1,0 +1,5 @@
+-r base.txt
+django-debug-toolbar==1.4
+factory_boy==2.6.0#egg=factory
+django-extensions==1.6.1
+ipython

@@ -1,0 +1,3 @@
+(the contents of this file are unimportant; uWSGI watches this file and, when
+the modtime changes, it relaod the process. so, to safely restart this process,
+you can just "touch touch-to-restart")

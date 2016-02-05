@@ -1,21 +1,21 @@
 body {
-  font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 h1 {
-  font-size: 300%;
-  margin: 1em 0;
+    font-size: 300%;
+    margin: 1em 0;
 }
 
-.balloonicorn-peek{
+.balloonicorn-peek {
     display: inline-block;
     width: 400px;
     padding: 12px 0 0 5px;
 }
 
 .btn.btn-primary {
-  background-color: #e94831;
-  border-color: #611504;
+    background-color: #e94831;
+    border-color: #611504;
 }
 
 #id_description {

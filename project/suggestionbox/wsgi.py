@@ -8,9 +8,15 @@ https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
 """
 
 import os
+try:
+    # noinspection PyPackageRequirements,PyUnresolvedReferences
+    import env
+except ImportError:
+    pass
+
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "suggestion_box.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "suggestionbox.settings.development")
 
 application = get_wsgi_application()

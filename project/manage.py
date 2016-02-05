@@ -3,7 +3,13 @@ import os
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "suggestion_box.settings")
+    try:
+        # noinspection PyPackageRequirements,PyUnresolvedReferences
+        import env
+    except ImportError:
+        pass
+
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "suggestionbox.settings.development")
 
     from django.core.management import execute_from_command_line
 
